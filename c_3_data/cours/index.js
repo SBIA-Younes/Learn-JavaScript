@@ -52,7 +52,7 @@ let data = [
 // -------------------------
 
 if (data[2].age > data[1].age) {
-  console.log('La personne la plus vieille est ' + data[2].pseudo + ' avec un age de ' + data[2].age + ' par a port a ' + data[1].pseudo + ' qui a un age de ' + data[1].age)
+  // console.log('La personne la plus vieille est ' + data[2].pseudo + ' avec un age de ' + data[2].age + ' par a port a ' + data[1].pseudo + ' qui a un age de ' + data[1].age)
 }
 
 let html = '';
@@ -94,3 +94,100 @@ document.body.addEventListener('click', (e)=> {
   }
 })
 
+// Methodes String
+let string2 = 'Javascript est un longage oriente objet';
+
+// console.log(parseInt('1') + 2); // 3
+// console.log(isNaN(string2)); // true
+// console.log(string2[string2.length -1]); // t
+// console.log(string2.indexOf('l')); // 18 
+// console.log(string2.indexOf('x')); // -1 => retourne -1 s'il ne connais pas 
+
+// let newString = string2.slice(10); // est un longage orient
+// let newString = string2.slice(5, 17); //cript est un
+
+// console.log(string2.split('i'));
+
+// ---------------------
+// Methodes Numbers
+// ---------------------
+
+let number2 = 42.1234;
+let numberString = '42.12 est un chiffre';
+
+// console.log(number2.toFixed(2)); // 42.12
+// console.log(parseInt('42')); // 42
+// console.log(parseInt(numberString)); // 42
+// console.log(parseFloat(numberString)); // 42.12
+
+// Math
+// console.log(Math.PI); // 3.141592653589793
+// console.log(Math.round(number2)); // 42
+// console.log(Math.floor(number2)); // 42
+// console.log(Math.ceil(number2)); // 43
+// console.log(Math.pow(2,7)); // 128
+// console.log(Math.sqrt(16)); // 4
+// console.log(Math.floor(Math.random() * 50)); // 0 <br > 50
+
+// ---------------------
+// Methodes Arrays 
+// ---------------------
+
+let array3 = ['JavaScript', 'React', 'NodeJs'];
+let array4 = ['Python', 'Django'];
+
+// let newArray = array3.concat(array4); // ["JavaScript","React","NodeJs","Python","Django"]
+// let newArray = [...array3, ...array4]; // ["JavaScript","React","NodeJs","Python","Django"]
+// console.log(array3.join(' - ')); //  JavaScript - React - NodeJs
+// console.log(array3.slice(1)); // ['React', 'NodeJs']
+// array3.forEach((languages) => console.log(languages));
+
+// console.log(array3.some((languages) => languages == 'React')); // true
+// let shift = array3.shift(); // ['React', 'NodeJs'] , remove first element
+// console.log(array3.pop()); // NodeJs , Removes the last element from an array and returns it
+
+// const restArray = array3.splice(0,1,'c++'); // array3 = ['c++', 'React', 'NodeJs']
+// const restArray = array3.splice(0,1,...array4); // array3 = ['Python', 'Django', 'React', 'NodeJs']
+
+// !! IMPORTANT //
+
+let arrayNumber = [4, 74, 28, 12,1];
+// console.log(arrayNumber.reduce((x,y) => x +y)); // 119
+
+// arrayNumber.push(17); // [4, 74, 28, 12,1, 17]
+
+// !! FILTER, SORT, MAP
+
+
+// console.log(arrayNumber.filter((number) => number > 10)); // [74, 28, 12]
+
+
+// console.log(arrayNumber.sort((a,b) => a - b)); // [1, 4, 12,, 28 74]
+// console.log(arrayNumber.sort((a,b) => b - a)); // [74, 28, 12, 4, 1]
+
+// console.log(arrayNumber.filter((number) => number > 10).sort((a,b) => b - a)); // [74, 28, 12]
+// console.log(arrayNumber.filter((number) => number > 10).sort((a,b) => a - b)); // [12, 28, 74]
+
+
+// console.log(arrayNumber.map((number) => number * 2)); // [8, 148, 56, 24, 2]
+
+// document.body.innerHTML += arrayNumber.map(
+//   (number) => `<li> ${number} </li>`
+// ).join('-------')
+
+// ------------------
+// Methodes Objects
+// ------------------
+
+document.body.innerHTML = data
+// .filter((user) => user.admin === false)
+// .filter((user) => user.pseudo.includes('a'))
+.sort((a, b) => b.age - a.age)
+.map((user) => `
+  <div class='user-card'> 
+    <h2> ${user.pseudo} </h2>
+    <p>Age : ${user.age} ans </p>
+    <p>Status : ${user.admin ? 'Moderateur' : 'Mombre' } </p>
+  </div>
+  `
+).join('')
