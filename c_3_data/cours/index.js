@@ -179,18 +179,18 @@ let arrayNumber = [4, 74, 28, 12,1];
 // Methodes Objects
 // ------------------
 
-document.body.innerHTML = data
-// .filter((user) => user.admin === false)
-// .filter((user) => user.pseudo.includes('a'))
-.sort((a, b) => b.age - a.age)
-.map((user) => `
-  <div class='user-card'> 
-    <h2> ${user.pseudo} </h2>
-    <p>Age : ${user.age} ans </p>
-    <p>Status : ${user.admin ? 'Moderateur' : 'Mombre' } </p>
-  </div>
-  `
-).join('')
+// document.body.innerHTML = data
+// // .filter((user) => user.admin === false)
+// // .filter((user) => user.pseudo.includes('a'))
+// .sort((a, b) => b.age - a.age)
+// .map((user) => `
+//   <div class='user-card'> 
+//     <h2> ${user.pseudo} </h2>
+//     <p>Age : ${user.age} ans </p>
+//     <p>Status : ${user.admin ? 'Moderateur' : 'Mombre' } </p>
+//   </div>
+//   `
+// ).join('')
 
 // ------------------
 //  Les Dates 
@@ -236,7 +236,7 @@ let array5 = [70, 90, 80];
 
 const [a, b, c] = array5; // a = 70, b = 90, c = 80
 
-console.log(iso);
+// console.log(iso);
 const dateDestructuring = (chaine) => {
   let newDate = chaine.split('T')[0]
   let [y, m, d] = newDate.split('-');
@@ -246,4 +246,22 @@ const dateDestructuring = (chaine) => {
   return [d,m,y].join('/') // 16/11/2023
 }
 
-console.log(dateDestructuring(iso));
+// console.log(dateDestructuring(iso));
+
+//  -----------------
+// Les Datasets
+//  -----------------
+
+
+const h3js = document.getElementById('javascript');
+
+// console.log(h3js.dataset.lang); // js
+
+const h3 = document.querySelectorAll('h3');
+// h3.forEach((langue) => console.log(langue.dataset.lang)) // js jv py
+
+
+// ------------------
+// Regex
+// ------------------
+
