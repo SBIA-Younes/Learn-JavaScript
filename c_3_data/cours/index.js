@@ -265,3 +265,27 @@ const h3 = document.querySelectorAll('h3');
 // Regex
 // ------------------
 
+let mail = 'from_scratch33@gmail.com';
+// console.log(mail.search(/gmail.com/));// Si la chaîne est trouvée, la fonction searsh retourne l'index de début de la chaîne trouvée. Sinon, elle retourne -1.
+
+// console.log(mail.replace(/gmail/ , 'hotmail')); // from_scratch33@hotmail.com
+
+// console.log(mail.match(/SCratch/)); // null
+// console.log(mail.match(/SCratch/i)); // true [...]
+
+// console.log( mail.match(/[zug]/)); // ['g', ...]
+
+// Tous les chiffres
+// console.log(mail.match(/\d/)); // [3, ...]
+
+// Matcher touts les lettres
+// console.log(mail.match(/[a-z]/)); // ['f', ...]
+
+// console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,5}$/i)); // ['from_scratch33@gmail.com', ...]
+
+
+let separator = 265264849;
+
+// console.log(typeof separator.toString()); // string
+// console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')); // 265 264 849
+
