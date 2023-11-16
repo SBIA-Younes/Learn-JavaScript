@@ -191,3 +191,59 @@ document.body.innerHTML = data
   </div>
   `
 ).join('')
+
+// ------------------
+//  Les Dates 
+// ------------------
+
+// Date classique
+let date = new Date(); // Thu Nov 16 2023 08:50:54 GMT+0100 (heure normale d’Europe centrale)
+
+// Timstamp
+let timestamp = Date.parse(date); // 1700121024000
+
+let iso = date.toISOString(); // 2023-11-16T07:51:26.569Z
+
+
+function dateParser (chaine){
+  let newDate = new Date(chaine).toLocaleDateString('fr-FR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  })
+  return newDate
+}
+
+// console.log(dateParser(date)); // 16 novembre 2023 à 08:56:45
+// console.log(dateParser(timestamp)); // 16 novembre 2023 à 08:57:15
+// console.log(dateParser(iso)); // 16 novembre 2023 à 08:59:17
+
+// ------------------
+// Destructuring
+// ------------------
+
+let moreData = {destVar: ['Element 1','Element 2']}
+
+const {destVar} = moreData; // destVar = moreDate.destVar
+
+// console.log(moreData.destVar); // (2) ['Element 1', 'Element 2']
+// console.log(destVar); // (2) ['Element 1', 'Element 2']
+
+let array5 = [70, 90, 80];
+
+const [a, b, c] = array5; // a = 70, b = 90, c = 80
+
+console.log(iso);
+const dateDestructuring = (chaine) => {
+  let newDate = chaine.split('T')[0]
+  let [y, m, d] = newDate.split('-');
+  console.log(y);
+  console.log(m);
+  console.log(d);
+  return [d,m,y].join('/') // 16/11/2023
+}
+
+console.log(dateDestructuring(iso));
