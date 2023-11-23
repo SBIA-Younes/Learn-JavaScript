@@ -1,27 +1,19 @@
-import { Component } from "react";
-import Wrapper from "./Wrapper";
+const Car = ({color,  marque, year}) => {
 
+  const colorInfo = color ? <p>Couleur: {color}</p> : <p>Couleur: "Néant"</p>;
+  
 
+  if (marque) {
+      return (
+          <div style={ {backgroundColor: 'pink', width: '400px', padding: '10px', margin: '5px auto'} }>
+              <p>Marque: { marque }</p>
+              <p>Age: {year}</p>
+              {colorInfo}
+          </div>
+      )
+  }
 
-const Cars = ({color, marque, proprietaire}) =>{
-    
-    // const colorInfo = color ? <p>Couleur : {color} </p> : <p>Couleur : orange </p>; // option 1
-    
-        
-
-        return marque && (
-          <Wrapper >
-            {proprietaire ? <p>proprietaire : {proprietaire} </p> : <p>proprietaire : SBIA </p>} {/* Option 1 */}
-      
-            {/* color ? <p>Couleur : {color} </p> : <p>Couleur : orange </p>  */} {/* Option 2 */} 
-
-            <p>Couleur : {color ? color : 'Orange'} </p>{/* Option 3 */}
-            
-            <p>Marque : {marque} </p>
-
-          </Wrapper> 
-        );
-
+  // return null // ce return est Facultatif
 }
 
-export default Cars;
+export default Car
