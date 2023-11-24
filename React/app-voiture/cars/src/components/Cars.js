@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 const Car = ({color,  marque, year}) => {
 
   const colorInfo = color ? <p>Couleur: {color}</p> : <p>Couleur: "Néant"</p>;
