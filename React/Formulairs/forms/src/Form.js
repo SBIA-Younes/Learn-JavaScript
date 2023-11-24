@@ -1,20 +1,29 @@
 import { Component } from "react";
-import './myCss.css'
-import MyHead from "./myHeaderOne";
-import styles from './myCss.module.css';
+import styled from 'styled-components';
+
+const Title  = styled.h1`
+  color:red;
+  font-size:80px
+`;
+
+const Button = styled.button`
+  background: black;
+  color: #ffffff;
+  padding: 7px 9px;
+`;
 
 
 
 class Form extends Component {
 
   render() {
-    const myClass = this.props.head ? 'blue' : 'red';
+   
 
     return (
     <div>
-      <MyHead/>
-      <p className={styles.green}>je suis rouge ou bleu</p>
-      <button>Valider</button>
+       <Title >Commentaire</Title>
+      <button >Valider</button>
+      <Button>Valider 2</Button>
     </div>
     )
 }}

@@ -1,11 +1,11 @@
-
+import Resulta from './Game';
 import './App.css';
-import Form from './Form';
+
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <Resulta/>
     </div>
   );
 }
