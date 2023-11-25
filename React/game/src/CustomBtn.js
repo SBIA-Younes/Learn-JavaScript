@@ -1,27 +1,24 @@
 // import styled from 'styled-components'
 
 
-const CustomBtn = ({children, backgroundColor, borderRadius})=> {
-
-  const custombackground = backgroundColor ? backgroundColor :'gray';
-  const customborderRadius = borderRadius ? borderRadius : '7px';
+const Btn = ({children, styled, onClick})=> {
 
   const styleBtn = {
-  backgroundColor: custombackground,
+  backgroundColor: 'gray',
   border: 'none',
   color: '#fff',
   fontSize: '19px',
-  padding: '15px 65px',
+  padding: '15px 30px',
   textAlign: 'center',
   textDecoration: 'none',
-  borderRadius: customborderRadius,
+  borderRadius: '7px',
   display: 'block',
   margin: '5px auto'
   };
   return (
-    <button style={styleBtn}>{children}</button>
+    <button style={{...styleBtn, ...styled}} onClick={onClick} >{children}</button>
   )
 
 }
 
-export default CustomBtn;
+export default Btn;

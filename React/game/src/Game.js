@@ -1,5 +1,5 @@
 import { Component } from "react";
-import CustomBtn from "./CustomBtn";
+import Btn from "./CustomBtn";
 // import stayled from 'styled-components'
 
 
@@ -9,19 +9,34 @@ class Resulta extends Component {
     name: 'Mario',
     winner: true
   }
+  changeState = () => this.setState({winner: !this.state.winner})
 
-  render () {
+  ;  render () {
+    const clqssColor = this.state.winner ? 'alert-success' : 'alert-danger';
+
+    const succes = {
+      backgroundColor: 'green',
+      color: 'black',
+    }
+    const danger = {
+      backgroundColor: 'red',
+      borderRadius: '20px',
+    }
+
     return (
-      <div>
-        {this.state.winner ?
-        <h2 className="alert alert-success"  role="alert">Winner {this.state.name}</h2> :
-        <h2 className="alert alert-danger"  role="alert">Rate 3!</h2>
-      }
-        <button onClick={() => this.setState({winner:!this.state.winner})} className="btn btn-warning">Change state</button>
-        <br/>
-        <CustomBtn backgroundColor='green' >Block</CustomBtn>
-        <CustomBtn backgroundColor='red'borderRadius='25px'>Click ici</CustomBtn>
-        <CustomBtn backgroundColor='blue'>Block</CustomBtn>
+      <div className="comtainer">
+        
+        <div className={`alert ${clqssColor}`} role="alert">
+          {this.state.winner ?`Bravo ${this.state.name}` : 'Rate 3!'} 
+        </div> 
+     
+        <button onClick={this.changeState} className="btn btn-warning">
+          Change state
+        </button>
+  
+        <Btn styled={succes} onClick={this.changeState}>Block</Btn>
+        <Btn styled={danger}>Click ici</Btn>
+        <Btn styled={{backgroundColor:'blue'}}>Block</Btn>
 
       </div>
     )
