@@ -31,10 +31,14 @@ class LifeCycle extends Component {
     console.log(this.state);
   }
 
+  componentWillUnmount() {
+    console.log(`Etape ${this.state.step} : je suis dans le componentWillUnmount()`);
+   }
+
   render() {
   console.log(`Etape ${this.state.step} : je suis dans le render()`);
   return (
-    <div>
+    <div className='borderBox'>
        {console.log(`Etape ${this.state.step} : Mise a jour DOM`)}
         <p>Chargement : {this.state.step}</p>
         <p>Nom : {this.state.name}</p>
