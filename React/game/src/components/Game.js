@@ -24,7 +24,7 @@ class Resulta extends Component {
     }
 
     return (
-      <div className="comtainer">
+      <div className="container">
         
         <div className={`alert ${clqssColor}`} role="alert">
           {this.state.winner ?`Bravo ${this.state.name}` : 'Rate 3!'} 

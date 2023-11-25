@@ -1,16 +1,24 @@
-import Resulta from './Game';
+// import Resulta from './components/Game';
+// import Btn from './components/CustomBtn';
+import Template from './components/Template';
+import Welcome from './components/Welcome';
+import Button from './components/Button';
+
 import './App.css';
-import Btn from './CustomBtn';
 
 
 function App() {
 
   const onClickAlert = () => alert('Hello World')
   return (
-    <div className="App">
-      <Resulta/>
-      <Btn onClick={onClickAlert} styled={{backgroundColor:'yellow', color:'blue'}}>Say Hellow</Btn>
-    </div>
+    < >
+    <Template></Template>
+      <Welcome></Welcome>
+      {/* <Resulta/>
+      <Btn onClick={onClickAlert} styled={{backgroundColor:'yellow', color:'blue'}}>Say Hellow</Btn> */}
+      <Button></Button>
+
+    </>
   );
 }
 
