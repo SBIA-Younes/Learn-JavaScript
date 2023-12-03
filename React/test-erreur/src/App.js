@@ -2,25 +2,28 @@ import { Component } from "react";
 import "./App.css";
 import Vegeta from "./components/Vegeta";
 import Goku from "./components/Goku";
-import Frieza from "./components/Frieza";
-import ErrorBoundary from "./components/ErrorBoundary";
+import AddHits from "./components/AddHits";
+
+
 
 class App extends Component {
   render() {
     return (
       <div className="container text-center">
-        <h1>Clique sur les gentils</h1>
+        <h1>Vegeta Vs goku</h1>
         <hr />
         <div className="row">
-          <ErrorBoundary>
-            <Vegeta />
-          </ErrorBoundary>
-          <ErrorBoundary>
-            <Goku />
-          </ErrorBoundary>
-          <ErrorBoundary>
-            <Frieza />
-          </ErrorBoundary>
+          <AddHits 
+          render={(hits,addOne, saiyen)=>{
+           return saiyen.Vegeta && <Vegeta hits={hits} addOne={addOne} name='Vegeta' />
+          }}
+          />
+          <AddHits 
+          render={(hits,addOne, saiyen)=>{
+           return saiyen.Goku && <Goku hits={hits} addOne={addOne} name='Goku' />
+          }}
+          />
+          
         </div>
       </div>
     );
