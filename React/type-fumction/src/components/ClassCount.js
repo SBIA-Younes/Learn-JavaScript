@@ -8,6 +8,7 @@ import React, { Component } from 'react'
   
     this.state = {
       count:0,
+      name: ''
     }
   }
   componentDidMount() { 
@@ -18,6 +19,7 @@ import React, { Component } from 'react'
   componentDidUpdate(prevProps, prevState) {
     console.log('Je suis dans componentDidUpdate');
     if (this.state.count !== prevState.counte){
+      console.log('Update Title');
       document.title = `Class Vous avez cliqué ${this.state.count} fois`;
       }
   }
@@ -27,6 +29,11 @@ import React, { Component } from 'react'
       <div>
         <p>Class Count : {this.state.count}</p>
         <button onClick={()=>this.setState({count : this.state.count + 1})} >Counter</button>
+        
+        <input type="text" value={this.state.name} onChange={e => {
+          this.setState({ name : e.target.value })
+        }}/>
+
       </div>
     )
   }
