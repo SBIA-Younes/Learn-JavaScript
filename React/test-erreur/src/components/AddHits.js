@@ -8,7 +8,7 @@ class AddHits extends Component {
   
   state = {
     fighters:{
-      Vegeta:true,
+      Vegeta:false,
       Goku:true
     },
     hits:0
