@@ -12,17 +12,18 @@ import React, { Component } from 'react'
     }
   }
   componentDidMount() { 
-    console.log('Je suis dans CMD');
-    document.title = `Class Vous avez clique ${this.state.count} fois`
+    // console.log('Je suis dans CMD');
+    // document.title = `Class Vous avez clique ${this.state.count} fois`
+    document.title = 'Nouveau Titre'
     }
     
-  componentDidUpdate(prevProps, prevState) {
-    console.log('Je suis dans componentDidUpdate');
-    if (this.state.count !== prevState.counte){
-      console.log('Update Title');
-      document.title = `Class Vous avez cliqué ${this.state.count} fois`;
-      }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log('Je suis dans componentDidUpdate');
+  //   if (this.state.count !== prevState.counte){
+  //     console.log('Update Title');
+  //     document.title = `Class Vous avez cliqué ${this.state.count} fois`;
+  //     }
+  // }
 
   render() {
     return (

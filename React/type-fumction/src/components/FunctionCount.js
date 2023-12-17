@@ -12,7 +12,7 @@ function FunctionCount() {
       document.title = `Functoin vous avez clique ${count} fois`
     // }, (5000))
 
-  },[count])
+  },[])
 
   return (
     <div>
