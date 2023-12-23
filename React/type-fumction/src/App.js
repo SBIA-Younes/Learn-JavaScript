@@ -1,7 +1,9 @@
 
-import { useState, useRef} from 'react';
-import FancyInput from './components/FancyInput';
+import { useState} from 'react';
+
 import './App.css'
+import Layout from './components/Layout';
+import Box from './components/Box';
 
 
 
@@ -9,23 +11,13 @@ import './App.css'
 
 function App () {
   
-  const date = new Date();
-
-  const fancyInputRef = useRef();
-
-  const fancyInput = (val)=>{
-  console.log(val);
-  console.log(fancyInputRef.current);
-  fancyInputRef.current.focus(val);
-  fancyInputRef.current.countMax();
-
-}
+ 
 
   return (
     <div className='App'>
-    <FancyInput ref={fancyInputRef} />
-    <button onClick={()=>fancyInput(date.getDay())}>Cliquer</button>      
-
+      <h1>useLayoutEffect</h1>
+      <Box/>
+      <Layout/>
     </div>
   );
 }
