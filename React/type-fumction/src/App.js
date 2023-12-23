@@ -1,20 +1,30 @@
 
-import { useState} from 'react';
-import Input from './components/Input';
-import Title from './components/Title';
+import { useState, useRef} from 'react';
+import FancyInput from './components/FancyInput';
+import './App.css'
+
 
 
 
 
 function App () {
   
+  const date = new Date();
 
+  const fancyInputRef = useRef();
+
+  const fancyInput = (val)=>{
+  console.log(val);
+  console.log(fancyInputRef.current);
+  fancyInputRef.current.focus(val);
+  fancyInputRef.current.countMax();
+
+}
 
   return (
-    <div className='container mt-4'>
-      {/* <Title/> */}
-      <Input/>
-      
+    <div className='App'>
+    <FancyInput ref={fancyInputRef} />
+    <button onClick={()=>fancyInput(date.getDay())}>Cliquer</button>      
 
     </div>
   );
