@@ -5,26 +5,26 @@ const useFetch = (fetchUrl)=> {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-   useDebugValue(data, val => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch(fetchUrl);
+      if (!response.ok) {
+        throw new Error("HTTP error! status: ${response.status}")
+      }
+      
+      const fetchedData = await response.json()
+      setData(fetchedData);
+      setIsLoading(false);
 
-    alert('useDebugValue')
-    return JSON.stringify(val)
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+  
+  useEffect(()=>{
+    fetchData()
   })
-  // Je suis en mode DEV
-  // React-dev-Tool ouvert pour inspecter le custom hook
-
-  useEffect(() => {
-    fetch(fetchUrl)
-    .then(response => response.json())
-    .then(json => {
-      setData(json);
-      setIsLoading(false)
-    })
-    .catch(err=>console.log(err.message))
-  }, [fetchUrl])
-
   return {data, isLoading}
-
 }
 
 export default useFetch
