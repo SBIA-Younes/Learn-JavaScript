@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TableUsers({dataArray}) {
+function TableUsers({dataArray, notification}) {
   return (
     <table id='table'>
       <thead>
@@ -13,7 +13,9 @@ function TableUsers({dataArray}) {
         </tr>
       </thead>
       <tbody>
-        {
+        {notification && <tr><td colSpan="4" style={{color:'red'}}>{notification}</td></tr>}
+
+        { 
           dataArray.map(({id, name, username, email, address})=>{
             return (
               <tr key={id}>
