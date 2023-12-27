@@ -18,7 +18,7 @@ function App () {
  
   const [search, setSearch] = useState('');
   const [resultSearch, setResultSearch] = useState([]);
-  const [isPending, startTransition] = useTransition();
+  // const [isPending, startTransition] = useTransition();
 
   // Custom Hook
   // const {data, isLoading} = useFetch('https://jsonplaceholder.typicode.com/users');
@@ -39,9 +39,9 @@ function App () {
 
   useEffect(() => {
     if (search !== '') {
-      startTransition(() => {
+      // startTransition(() => {
       filterUsers()
-      })
+      // })
     } else {
       setResultSearch([]);
     }
@@ -76,7 +76,7 @@ function App () {
       :
       <TableUsers
         dataArray={resultSearch}
-        notification={isPending ? 'Loading...' : null}
+        // notification={isPending ? 'Loading...' : null}
         />
     }
     </div>
